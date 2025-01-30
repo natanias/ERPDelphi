@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
- Vcl.Forms, Vcl.Dialogs, RLReport, Vcl.Imaging.pngimage,Vcl.Controls, Vcl.Styles;
+ Vcl.Forms, Vcl.Dialogs, RLReport, Vcl.Imaging.pngimage,Vcl.Controls, Vcl.Styles,
+  RLFilters, RLPDFFilter, RLXLSFilter;
 
 type
   Trelatorio2 = class(TForm)
@@ -30,6 +31,8 @@ type
     lbl_total_registro: TRLLabel;
     lbl_total: TRLLabel;
     rlb_linha: TRLBand;
+    RLPDFFilter: TRLPDFFilter;
+    RLXLSFilter: TRLXLSFilter;
 
   private
     { Private declarations }

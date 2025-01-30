@@ -25,7 +25,7 @@ uses
   Service.conexao,
   Provider.constants,
   Provider.conversao,
-  View.mensagens;
+  View.mensagens, frxClass;
 
 type
   TViewBaseListas = class(TViewBase)
@@ -50,6 +50,9 @@ type
     edtPesquisa: TSearchBox;
     DBG_dados: TDBGrid;
     dsDados: TDataSource;
+    pnlTituloCadastro: TPanel;
+    lblTituloCadastro: TLabel;
+    btnVoltarPesquisa: TSpeedButton;
     procedure btnExitClick(Sender: TObject);
     procedure btnExitMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -216,34 +219,34 @@ begin //salvar
         end;
       end;
 
-    end
-    else begin
-
-      dsDados.DataSet.Post;
-
-      if sTELA = TelasToStr(tpProdutos) then
-      begin
-        ShowMessage('Produto Salvo com Sucesso.');
-      end;
-
-      if sTELA = TelasToStr(tpCaixa) then
-      begin
-        ShowMessage('Caixa Salvo com Sucesso.');
-      end;
-
-      if sTELA = TelasToStr(tpGrupo) then
-      begin
-        ShowMessage('Grupo Salvo com Sucesso!!!');
-      end;
-
-      if sTELA = TelasToStr(tpSubgrupo) then
-      begin
-        ShowMessage('Subgrupo Salvo com Sucesso!!!');
-      end;
-
     end;
+    //else begin
 
-    CardPanel_Listas.ActiveCard := card_pesquisa;
+      //dsDados.DataSet.Post;
+
+     // if sTELA = TelasToStr(tpProdutos) then
+     // begin
+        //ShowMessage('Produto Salvo com Sucesso.');
+     // end;
+
+     // if sTELA = TelasToStr(tpCaixa) then
+      //begin
+      //  ShowMessage('Caixa Salvo com Sucesso.');
+     // end;
+
+      //if sTELA = TelasToStr(tpGrupo) then
+     // begin
+     //   ShowMessage('Grupo Salvo com Sucesso!!!');
+     // end;
+
+     // if sTELA = TelasToStr(tpSubgrupo) then
+     // begin
+     //   ShowMessage('Subgrupo Salvo com Sucesso!!!');
+     // end;
+
+   // end;
+
+   // CardPanel_Listas.ActiveCard := card_pesquisa;
   end;
 end;
 

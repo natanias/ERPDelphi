@@ -16,7 +16,8 @@ uses
   FireDAC.Stan.Async,
   FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client,
+  Provider.constants;
 
 type
   TServiceCadastro = class(TDataModule)
@@ -59,6 +60,7 @@ type
     QRY_produto2PR2_SITRIBUTARIA: TIntegerField;
     QRY_produtoPR1_NCM: TStringField;
     QRY_produto2PR2_ESTOQUE: TFMTBCDField;
+    procedure QRY_produtoAfterScroll(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -73,5 +75,10 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure TServiceCadastro.QRY_produtoAfterScroll(DataSet: TDataSet);
+begin // Pegando os produtos detalhes
+  GET_Produto_detalhe(ServiceCadastro.QRY_produtoPR1_CODIGO.AsInteger,iCOD_FILIAL);
+end;
 
 end.

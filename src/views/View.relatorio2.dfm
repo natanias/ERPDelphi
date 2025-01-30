@@ -992,9 +992,9 @@ object relatorio2: Trelatorio2
       ParentColor = False
       Transparent = False
       object RLD_codigo: TRLDBText
-        Left = 18
+        Left = 5
         Top = 4
-        Width = 55
+        Width = 82
         Height = 15
         Align = faBottomOnly
         Alignment = taCenter
@@ -1012,7 +1012,7 @@ object relatorio2: Trelatorio2
       object RLD_referencia: TRLDBText
         Left = 190
         Top = 4
-        Width = 82
+        Width = 73
         Height = 15
         Align = faBottomOnly
         Alignment = taJustify
@@ -1030,7 +1030,7 @@ object relatorio2: Trelatorio2
       object RLD_descricao: TRLDBText
         Left = 374
         Top = 4
-        Width = 235
+        Width = 115
         Height = 15
         Align = faBottomOnly
         Alignment = taJustify
@@ -1117,5 +1117,18 @@ object relatorio2: Trelatorio2
       Borders.DrawBottom = False
       Transparent = False
     end
+  end
+  object RLPDFFilter: TRLPDFFilter
+    DocumentInfo.Creator = 
+      'FortesReport Community Edition v4.0.1.2 \251 Copyright '#169' 1999-20' +
+      '21 Fortes Inform'#225'tica'
+    DisplayName = 'Documento PDF'
+    Left = 631
+    Top = 72
+  end
+  object RLXLSFilter: TRLXLSFilter
+    DisplayName = 'Planilha Excel 97-2013'
+    Left = 223
+    Top = 80
   end
 end

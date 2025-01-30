@@ -3,7 +3,7 @@ inherited ViewBaseListas: TViewBaseListas
   Caption = 'ViewBaseListas'
   ClientHeight = 600
   ClientWidth = 1080
-  Position = poMainFormCenter
+  Position = poDefault
   StyleElements = [seFont, seClient, seBorder]
   OnShow = FormShow
   ExplicitWidth = 1080
@@ -360,7 +360,7 @@ inherited ViewBaseListas: TViewBaseListas
       Margins.Right = 1
       Margins.Bottom = 0
       Align = alClient
-      ActiveCard = card_pesquisa
+      ActiveCard = card_cadastro
       BevelOuter = bvNone
       Color = clWhite
       ParentBackground = False
@@ -444,6 +444,55 @@ inherited ViewBaseListas: TViewBaseListas
         Caption = 'card_cadastro'
         CardIndex = 1
         TabOrder = 1
+        object pnlTituloCadastro: TPanel
+          Left = 0
+          Top = 0
+          Width = 1078
+          Height = 60
+          Align = alTop
+          BevelOuter = bvNone
+          Color = 14869218
+          ParentBackground = False
+          TabOrder = 0
+          object lblTituloCadastro: TLabel
+            AlignWithMargins = True
+            Left = 8
+            Top = 15
+            Width = 198
+            Height = 42
+            Margins.Left = 8
+            Margins.Top = 15
+            Align = alLeft
+            Caption = 'Cadastro de Produto'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = 5263440
+            Font.Height = -22
+            Font.Name = 'Segoe UI Semilight'
+            Font.Style = []
+            ParentFont = False
+            ExplicitHeight = 30
+          end
+          object btnVoltarPesquisa: TSpeedButton
+            AlignWithMargins = True
+            Left = 971
+            Top = 3
+            Width = 104
+            Height = 54
+            Cursor = crHandPoint
+            Align = alRight
+            GroupIndex = 1
+            Caption = 'Voltar'
+            Flat = True
+            Font.Charset = ANSI_CHARSET
+            Font.Color = 5395026
+            Font.Height = -18
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold, fsItalic]
+            ParentFont = False
+            ExplicitLeft = 543
+            ExplicitHeight = 29
+          end
+        end
       end
     end
   end

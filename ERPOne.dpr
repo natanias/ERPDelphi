@@ -15,7 +15,11 @@ uses
   Provider.conversao in 'src\providers\Provider.conversao.pas',
   View.produtos in 'src\views\View.produtos.pas' {ViewProdutos},
   View.mensagens in 'src\views\View.mensagens.pas' {ViewMensagens},
-  View.fundo in 'src\views\View.fundo.pas' {ViewFundo};
+  View.fundo in 'src\views\View.fundo.pas' {ViewFundo},
+  Service.vcred in 'src\services\Service.vcred.pas' {DataModule1: TDataModule},
+  View.tabelaPrecos in 'src\views\View.tabelaPrecos.pas' {Form1},
+  View.vcred in 'src\views\View.vcred.pas' {ViewBaseListas1},
+  view.relatorio.main in 'src\views\relatorios\view.relatorio.main.pas' {TFrmRelatorios};
 
 // Substituí a vírgula por ponto e vírgula
 
@@ -35,6 +39,10 @@ begin
   Application.CreateForm(TViewProdutos, ViewProdutos);
   Application.CreateForm(TViewMensagens, ViewMensagens);
   Application.CreateForm(TViewFundo, ViewFundo);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TViewBaseListas1, ViewBaseListas1);
+  Application.CreateForm(TTFrmRelatorios, TFrmRelatorios);
   Application.Run;
 end.
 

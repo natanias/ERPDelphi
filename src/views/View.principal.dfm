@@ -2475,8 +2475,7 @@ object ViewPrincipal: TViewPrincipal
         Margin = 20
         ParentFont = False
         OnClick = btn_RelatorioClick
-        ExplicitLeft = 0
-        ExplicitTop = 246
+        ExplicitLeft = 1
       end
     end
     object pnlShapeMenu: TPanel
@@ -2530,6 +2529,8 @@ object ViewPrincipal: TViewPrincipal
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
+        ExplicitLeft = 17
+        ExplicitTop = -79
         object lblBemVindo: TLabel
           AlignWithMargins = True
           Left = 20

@@ -34,8 +34,6 @@ type
     lbl_telefone: TLabel;
     lbl_cnpj: TLabel;
     lbl_Observacao: TLabel;
-    pnlTituloCadCliente: TPanel;
-    lblTitleCadCliente: TLabel;
     edtPES_CODIGO: TDBEdit;
     edtPES_RAZAO: TDBEdit;
     edtPES_FANTASIA: TDBEdit;

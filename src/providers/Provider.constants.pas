@@ -4,7 +4,8 @@ interface
 
 procedure GET_Pessoas(iTIPO: integer);
 procedure GET_Produtos;
-procedure GET_Produto_detalhe(iCOD_PRODUTO: integer);
+procedure GET_Produto_detalhe(iCOD_PRODUTO: integer); overload;
+procedure GET_Produto_detalhe(iCOD_PRODUTO, iCOD_FILIAL: integer); overload;
 
 var
   iCOD_FILIAL: integer;
@@ -35,13 +36,27 @@ begin //busca todos os produtos
 end;
 
 procedure GET_Produto_detalhe(iCOD_PRODUTO: integer);
-begin //busca apenas o detalhe de um produto
+begin //busca apenas o detalhe de um produto (todos)
+
   ServiceCadastro.QRY_produto2.Close;
   ServiceCadastro.QRY_produto2.SQL.Clear;
   ServiceCadastro.QRY_produto2.SQL.Add('select * from produto2 where pr2_codigopr1 = :codigo');
   ServiceCadastro.QRY_produto2.Params[0].AsInteger := iCOD_PRODUTO;
   ServiceCadastro.QRY_produto2.Open();
-end;
 
+  end;
+
+procedure GET_Produto_detalhe(iCOD_PRODUTO, iCOD_FILIAL: integer);
+begin //busca apenas o detalhe de um produto (por filial)
+
+  ServiceCadastro.QRY_produto2.Close;
+  ServiceCadastro.QRY_produto2.SQL.Clear;
+  ServiceCadastro.QRY_produto2.SQL.Add('select * from produto2 where pr2_codigopr1 = :codigo');
+  ServiceCadastro.QRY_produto2.SQL.Add('and pr2_filial = :filial');
+  ServiceCadastro.QRY_produto2.Params[0].AsInteger := iCOD_PRODUTO;
+  ServiceCadastro.QRY_produto2.Params[1].AsInteger := iCOD_FILIAL;
+  ServiceCadastro.QRY_produto2.Open();
+
+end;
 
 end.

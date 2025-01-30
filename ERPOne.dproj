@@ -181,6 +181,23 @@
             <Form>ViewFundo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\services\Service.vcred.pas">
+            <Form>DataModule1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\views\View.tabelaPrecos.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\views\View.vcred.pas">
+            <Form>ViewBaseListas1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\views\relatorios\view.relatorio.main.pas">
+            <Form>TFrmRelatorios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

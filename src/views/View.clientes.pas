@@ -29,8 +29,6 @@ uses
 
 type
   TViewClientes = class(TViewBaseListas)
-    pnlTituloCadCliente: TPanel;
-    lblTitleCadCliente: TLabel;
     lblTitleCodigo: TLabel;
     lblrAZAO: TLabel;
     edtPES_RAZAO: TDBEdit;

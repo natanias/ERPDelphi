@@ -23,7 +23,12 @@ uses
   Provider.constants,
   View.clientes,
   View.fornecedores,
-  Provider.conversao, View.produtos;
+  Provider.conversao,
+  View.produtos,
+  RLReport,
+  RLPDFFilter,
+  System.IOUtils,
+  view.relatorio.main;
 
 type
   TViewPrincipal = class(TForm)
@@ -74,6 +79,7 @@ type
     procedure btn_RelatorioClick(Sender: TObject);
 
 
+
   private
     procedure GET_LineMENU(Sender: TObject); // ctrl + SHit + C
   public
@@ -101,6 +107,10 @@ begin
   GET_LineMENU(Sender);
   ViewClientes := TViewClientes.Create(Self);
   try
+
+    ViewClientes.Top     := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewClientes.Height) / 2));
+    ViewClientes.Left    := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewClientes.Width) / 2));
+
     ViewClientes.Tag := PessoasToInt(tpCliente);
     ViewClientes.ShowModal;
   finally
@@ -127,6 +137,10 @@ begin
   GET_LineMENU(Sender);
   ViewFornecedores := TViewFornecedores.Create(Self);
   try
+
+    ViewFornecedores.Top    := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewFornecedores.Height) / 2));
+    ViewFornecedores.Left    := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewFornecedores.Width) / 2));
+
     ViewFornecedores.Tag := PessoasToInt(tpFornecedores);
     ViewFornecedores.ShowModal;
   finally
@@ -140,6 +154,10 @@ begin
   GET_LineMENU(Sender);
   ViewProdutos := TViewProdutos.Create(Self);
   try
+    //Centraliza Menu
+    ViewProdutos.Top    := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewProdutos.Height) / 2));
+    ViewProdutos.Left    := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewProdutos.Width) / 2));
+
     ViewProdutos.sTELA := TelasToStr(tpProdutos);
     ViewProdutos.ShowModal;
   finally
@@ -149,13 +167,30 @@ begin
 end;
 
 
+
+
+
 procedure TViewPrincipal.btn_RelatorioClick(Sender: TObject);
-begin
   //relatório
+begin
   GET_LineMENU(Sender);
-  relatorio2 := Trelatorio2.Create(Self);
-  relatorio2.rlr_relatorio2.Preview();
+  // Chama a tela de relatórios
+  TFrmRelatorios := TTFrmRelatorios.Create(Self);
+  try
+     // Exibe a tela de relatórios de forma modal
+
+    TFrmRelatorios.Top     := Round(pnlTopo.Height + ((pnlConteudo.Height - TFrmRelatorios.Height) / 2));
+    TFrmRelatorios.Left    := Round(pnlMenu.Width + ((pnlConteudo.Width - TFrmRelatorios.Width) / 2));
+
+    TFrmRelatorios.ShowModal;
+  finally
+    FreeAndNil(TFrmRelatorios); // Libera a memória após fechar a tela
+  end;
+
+
 end;
+
+
 
 procedure TViewPrincipal.FormShow(Sender: TObject);
 begin
